@@ -3,3 +3,9 @@ class NoFood
     false
   end
 end
+
+class DogFood
+  def is_liked?(food)
+    ["meat", "vegetable", "fruite"].member?(food)
+  end
+end
