@@ -31,7 +31,7 @@ class Animal
     end
   end
   
-
+  def speak
     "Bla bla bla"
   end
 
