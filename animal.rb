@@ -42,7 +42,7 @@ class Animal
     @number_of_legs = remover.decrease(@number_of_legs)
   end
 
-  def likes_food?
+  def likes_food?(food)
     @liked_food.is_liked?(food)
   end
 end
