@@ -1,4 +1,5 @@
 require_relative 'remover'
+require_relative 'food'
 
 class Animal
   attr_reader :id, :type, :number_of_legs
@@ -9,6 +10,7 @@ class Animal
     @name = name
     @number_of_legs = number_of_legs
     @type = type
+    @liked_food = NoFood.new()
   end
 
   def speak
@@ -38,5 +40,9 @@ class Animal
   def remove_leg
     remover = Remover.new()
     @number_of_legs = remover.decrease(@number_of_legs)
+  end
+
+  def likes_food?
+    @liked_food.is_liked?(food)
   end
 end
