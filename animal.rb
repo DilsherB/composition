@@ -2,7 +2,7 @@ require_relative 'remover'
 require_relative 'food'
 
 class Animal
-  attr_reader :id, :type, :number_of_legs
+  attr_reader :id, :type, :number_of_legs, :owner
   attr_accessor :name
 
   def initialize(type, number_of_legs, name = "Unknown")
@@ -44,5 +44,10 @@ class Animal
 
   def likes_food?(food)
     @liked_food.is_liked?(food)
+  end
+
+  def owner=(owner)
+    @owner = owner
+    owner.animals.push(self) unless owner.animals.include?(self)
   end
 end
